@@ -1,6 +1,7 @@
 const usersInfo = (data)=>{
 
     data.forEach(user => {
+        console.log(user);
         let name = `${user.name.first} ${user.name.last}`;
         let location = `${user.location.city} ${user.location.state} <br> ${user.location.country}  ${user.location.postcode}`
         document.querySelector('#users').innerHTML += `
@@ -10,6 +11,7 @@ const usersInfo = (data)=>{
   <h5 class="text-center">${name}</h5>
 </div>
 <ul class="list-group list-group-flush">
+  <li class="list-group-item">Age: ${user.dob.age}</li>
   <li class="list-group-item">Email: ${user.email}</li>
   <li class="list-group-item">Phone: ${user.phone}</li>
   <li class="list-group-item">Location: ${location}</li>
@@ -31,7 +33,7 @@ document.querySelector('#btn').addEventListener('click', (e)=>{
         // console.log(users);
     })
     .catch(err=>{
-        console.log('there is some thing wrong')
+        console.log('there is some thing wrong',err)
     })
 
     document.querySelector('#users').innerHTML=''
