@@ -19,11 +19,11 @@ const usersInfo = (data)=>{
        
    });
 }
-
+let input = document.querySelector('#input');
 document.querySelector('#btn').addEventListener('click', (e)=>{
 
     e.preventDefault();
-    fetch('https://randomuser.me/api/?results=9')
+    fetch(`https://randomuser.me/api/?results=${input.value}`)
     .then(response=>response.json())
     .then(data=>{
         let users = data.results;
