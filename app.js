@@ -5,7 +5,7 @@ const usersInfo = (data)=>{
         let name = `${user.name.first} ${user.name.last}`;
         let location = `${user.location.city} ${user.location.state} <br> ${user.location.country}  ${user.location.postcode}`
         document.querySelector('#users').innerHTML += `
-<div class="card col-sm-12 col-md-6 col-lg-4  mb-3 bg-secondary text-white">
+<div class="card col-sm-12 col-md-6 col-lg-4  mb-3 bg-secondary text-white col-md-offset-2">
 <img src="${user.picture.large}" class="card-img-top" alt="${name}">
 <div class="card-body">
   <h5 class="text-center">${name}</h5>
